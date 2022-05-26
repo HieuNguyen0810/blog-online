@@ -5,6 +5,8 @@ import com.blog.repository.BlogRepository;
 import com.blog.service.BlogService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -20,8 +22,13 @@ public class BlogServiceImpl implements BlogService {
         return blogRepository.findAll();
     }
 
-    public Iterable<Blog> getBlogsByUsername(String username) {
-        return blogRepository.findByUsername(username);
+//    @Override
+//    public Iterable<Blog> getBlogByUsername(String username) {
+//        return blogRepository.findByUsername(username);
+//    }
+
+    public List<Blog> getBlogsByUserID(Integer id) {
+        return blogRepository.findByUserId(id);
     }
 
 

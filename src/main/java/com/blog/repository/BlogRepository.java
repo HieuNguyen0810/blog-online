@@ -4,7 +4,13 @@ import com.blog.model.Blog;
 import com.blog.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BlogRepository extends JpaRepository<Blog, Integer> {
+import java.util.List;
 
-    Iterable<Blog> findByUsername(String username);
+public interface BlogRepository extends JpaRepository<Blog, Integer> {
+    @Override
+    List<Blog> findAll();
+
+//    Iterable<Blog> findByUsername(String username);
+
+    List<Blog> findByUserId(Integer id);
 }

@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface BlogService extends Service {
     Iterable<Blog> getBlogs();
 
-    Iterable<Blog> getBlogByUsername(String username);
+    Iterable<Blog> getBlogsByUserID(Integer id);
 }
