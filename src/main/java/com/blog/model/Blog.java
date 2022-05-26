@@ -44,7 +44,7 @@ public class Blog {
     private User user;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "blog", joinColumns = @JoinColumn(name = "blog_id"), inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    @JoinTable(name = "blog_tag", joinColumns = @JoinColumn(name = "blog_id"), inverseJoinColumns = @JoinColumn(name = "tag_id"))
     private Collection<Tag> tags;
 
     @OneToMany(mappedBy = "blog")

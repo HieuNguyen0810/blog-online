@@ -20,7 +20,7 @@ public class Tag {
     @Column(name = "tag_name", nullable = false)
     private String tagName;
 
-    @ManyToMany
-    @JoinTable(name = "tag", joinColumns = @JoinColumn(name = "tag_id"), inverseJoinColumns = @JoinColumn(name = "blog_id"))
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "tags")
+//    @JoinTable(name = "tag", joinColumns = @JoinColumn(name = "tag_id"), inverseJoinColumns = @JoinColumn(name = "blog_id"))
     private Collection<Blog> blogs;
 }

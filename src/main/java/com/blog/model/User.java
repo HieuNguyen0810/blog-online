@@ -57,7 +57,7 @@ public class User {
     private Date dob;
 
     @OneToMany(mappedBy = "user")
-    private HashSet<Blog> blogs;
+    private Collection<Blog> blogs;
 
     @OneToMany(mappedBy = "user")
     private Collection<Comment> comments;
