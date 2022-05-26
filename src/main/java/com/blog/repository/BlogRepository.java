@@ -6,9 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BlogRepository extends JpaRepository<Blog, Integer> {
 
-    static Iterable<Blog> findAllBlogsByUsername(String username) {
-    }
-
-    static Iterable<Blog> findAllBlogs() {
-    }
+    Iterable<Blog> findByUsername(String username);
 }
