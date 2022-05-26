@@ -33,7 +33,7 @@ public class User {
     @javax.validation.constraints.NotEmpty(message = "Please provide your last name")
     private String lastName;
 
-    @Column(nullable = false)
+    @Column(unique = true, nullable = false)
     private String username;
 
     @Column(nullable = false)
