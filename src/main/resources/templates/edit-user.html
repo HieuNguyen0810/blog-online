@@ -7,17 +7,30 @@
 <body>
     <h2>Edit user</h2>
     <form method="POST" th:object="${user}" th:action="@{/edit-user/} + ${user.id}">
+        <label for="id">User ID: </label>
+        <input name="id" type="text" readonly th:value="${user.id}" />
+        <br>
+        <label for="email">Email: </label>
+        <input name="email" type="text" readonly th:value="${user.email}" />
+        <br>
         <label for="firstName">First name: </label>
         <input name="firstName" type="text" th:value="${user.firstName}" />
         <br>
         <label for="lastName">Last name: </label>
         <input name="lastName" type="text" th:value="${user.lastName}" />
+        <br>
+        <label for="password">Password: </label>
+        <input name="password" type="password" th:value="${user.password}" />
+        <br>
         <label for="gender">Gender: </label>
         <br>
         <input name="gender" type="text" th:value="${user.gender}" />
         <br>
         <label for="phoneNumber">Phone number: </label>
         <input name="phoneNumber" type="text" th:value="${user.phoneNumber}" />
+        <br>
+        <label for="role">Role: </label>
+        <input name="role" type="text" readonly th:value="${user.role}" />
         <br>
         <br>
         <button>Submit</button>
