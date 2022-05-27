@@ -81,7 +81,6 @@ public class BlogController {
         return "redirect:/view-blog/{blogId}";
     }
 
-
     @GetMapping("/create-blog")
     public String showCreateBlogForm(@PathVariable Integer userId, Model model, Principal principal) {
         Optional<User> optionalUser = userServiceImpl.getByUsername(principal.getName());
@@ -91,24 +90,11 @@ public class BlogController {
             Date createdTime = blogServiceImpl.getDateTime();
             model.addAttribute("blog", new Blog(null, null, null, null, null, null, createdTime, user, null, null, null));
 
-
             return "create_blog";
         }
         else
             return "error";
     }
-
-//    @GetMapping("/create-blog")
-//    public String showCreateBlogForm(Model model) {
-////        Optional<User> user = userServiceImpl.getByUserId(userId);
-//        User user = new User(1, "FN", "ln", "username", "12345", 1, "hieu@gmail.com", "0916764424", 1, null, null, null, null);
-//        model.addAttribute("blog", new Blog(1, null, null, null, null, null, null, 1, null, null, null));
-////        model.addAttribute("blog", new Blog());
-////        if (user.isPresent())
-////            model.addAttribute("user", user);
-//
-//        return "create_blog";
-//    }
 
     @PostMapping("/create-blog")
     public String addBlog(Blog blog, Model model) {

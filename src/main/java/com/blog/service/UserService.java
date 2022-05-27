@@ -16,4 +16,6 @@ public interface UserService extends Service {
     Optional<User> findByUsername(String username);
 
     void save(User user);
+
+    Optional<User> findById(Integer userId);
 }

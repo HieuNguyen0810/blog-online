@@ -52,9 +52,9 @@ public class User {
 
     private String phoneNumber;
 
-    private Boolean gender;
+    private String gender;
 
-    private Date dob;
+//    private Date dob;
 
     @OneToMany(mappedBy = "user")
     private Collection<Blog> blogs;

@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<ul th:each="user : ${users}">
-    <li th:text="${user.username}"></li>
-</ul>
+<!--<ul th:each="user : ${users}">-->
+<!--    <li th:text="${user.username}"></li>-->
+    <table>
+        <tr>
+            <th>User ID</th>
+            <th>Email</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Gender</th>
+            <th>Phone number</th>
+            <th>Role</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.lastName}"></td>
+            <td th:text="${user.gender}"></td>
+            <td th:text="${user.phoneNumber}"></td>
+            <td th:text="${user.role}"></td>
+            <td><a th:href="@{/edit-user/} + ${user.id}">Edit</a></td>
+            <td><a th:href="@{/delete-user/} + ${user.id}">Delete</a></td>
+        </tr>
+    </table>
+<!--</ul>-->
 </body>
 </html>
