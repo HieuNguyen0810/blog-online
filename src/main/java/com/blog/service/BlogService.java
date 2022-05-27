@@ -17,4 +17,6 @@ public interface BlogService extends Service {
     void save(Blog blog);
 
     List<Blog> getByUser(User user);
+
+    void deleteByBlogId(int blogId);
 }

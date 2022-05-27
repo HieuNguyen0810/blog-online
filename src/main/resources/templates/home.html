@@ -8,6 +8,8 @@
     <h1>Blog Online</h1>
 <!--    <a th:text="${blog.title}" th:href="@{'/post/' + ${post.id}}">New Blog</a>-->
 <!--    <a th:href="@{'/blog/' + ${user.username}}">My Blog</a>-->
+    <a href="/registration" >sign up</a>
+    <a href="/get-all-user">user list</a>
     <ul th:each="blog : ${blogs}">
         <li><a th:text="${blog.title}" th:href="/view-blog/${blog.id}"></a></li>
     </ul>

@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
@@ -23,6 +20,7 @@ import org.hibernate.validator.constraints.Length;
 public class User {
     @Id
     @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "first_name", nullable = false)

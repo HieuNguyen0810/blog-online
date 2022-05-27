@@ -10,4 +10,10 @@ public interface UserService extends Service {
     List<User> getAllUsers();
 
     Optional<User> getByUsername(String username);
+
+    Optional<User> findByEmail(String email);
+
+    Optional<User> findByUsername(String username);
+
+    void save(User user);
 }

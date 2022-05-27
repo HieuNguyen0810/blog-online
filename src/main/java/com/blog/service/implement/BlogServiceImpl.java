@@ -49,4 +49,8 @@ public class BlogServiceImpl implements BlogService {
     public Date getDateTime() {
         return new java.util.Date();
     }
+
+    public void deleteByBlogId(int blogId) {
+        blogRepository.deleteById(blogId);
+    }
 }

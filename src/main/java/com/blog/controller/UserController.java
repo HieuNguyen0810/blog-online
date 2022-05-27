@@ -21,11 +21,12 @@ public class UserController {
     @GetMapping("/get-all-user")
     public String viewUsers(Model model) {
         List<User> users = userServiceImpl.getAllUsers();
-        return "view_users";
+        model.addAttribute("users", users);
+        System.out.println(users);
+        return "view-users";
     }
 
-//    @PutMapping("/edit-user")
-//    public
+
 
 //    @GetMapping("/get-user-{id}")
 //    public String
