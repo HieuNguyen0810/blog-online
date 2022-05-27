@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul th:each="blog: ${blogs}">
+        <li th:text="${blog.title}"></li>
+        <li th:text="${blog.content}"></li>
+    </ul>
+</body>
+</html>

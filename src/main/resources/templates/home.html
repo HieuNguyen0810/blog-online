@@ -6,8 +6,11 @@
 </head>
 <body>
     <h1>Blog Online</h1>
+<!--    <a th:text="${blog.title}" th:href="@{'/post/' + ${post.id}}">New Blog</a>-->
+<!--    <a th:href="@{'/blog/' + ${user.username}}">My Blog</a>-->
     <ul th:each="blog : ${blogs}">
-        <li th:text="${blog.title}"></li>
+        <li><a th:text="${blog.title}" th:href="/view-blog/${blog.id}"></a></li>
     </ul>
+
 </body>
 </html>

@@ -9,8 +9,11 @@ import java.util.List;
 public interface BlogRepository extends JpaRepository<Blog, Integer> {
     @Override
     List<Blog> findAll();
-
 //    Iterable<Blog> findByUsername(String username);
 
     List<Blog> findByUserId(Integer id);
+
+    Blog save(Blog blog);
+
+    List<Blog> findByUser(User user);
 }

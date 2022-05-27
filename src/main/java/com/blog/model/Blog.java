@@ -19,6 +19,7 @@ import java.util.Date;
 @Setter
 public class Blog {
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "blog_id")
     private Integer id;
 

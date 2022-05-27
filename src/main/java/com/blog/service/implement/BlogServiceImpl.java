@@ -1,11 +1,14 @@
 package com.blog.service.implement;
 
 import com.blog.model.Blog;
+import com.blog.model.User;
 import com.blog.repository.BlogRepository;
 import com.blog.service.BlogService;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -31,5 +34,19 @@ public class BlogServiceImpl implements BlogService {
         return blogRepository.findByUserId(id);
     }
 
+    public void save(Blog blog) {
+        blogRepository.save(blog);
+    }
 
+    public List<Blog> getByUser(User user) {
+        return blogRepository.findByUser(user);
+    }
+
+    public Optional<Blog> getById(Integer blogId) {
+        return blogRepository.findById(blogId);
+    }
+
+    public Date getDateTime() {
+        return new java.util.Date();
+    }
 }

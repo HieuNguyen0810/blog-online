@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="POST" th:object="${blog}" th:action="@{/create-blog}">
+        <label for="title">Title: </label>
+        <input name="title" type="text" th:value="${blog.title}" />
+        <br>
+        <label for="content">Content: </label>
+        <input name="content" type="text" th:value="${blog.content}" />
+        <br>
+    <!--    <label for="rate">Rate: </label>-->
+    <!--    <input name="rate" type="number" step="any" th:value="${blog.rate}" />-->
+        <br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
